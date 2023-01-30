@@ -1,7 +1,103 @@
+body > #root > div {
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+}
 
-
-.login-component { 
-    background-color: red;
+.login-component {
     width: 30%;
-    height: 50%;
-} 
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-component h2{
+    color: #ffff;
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom:0.5em;
+}
+
+.login-formulario {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffff;
+    border-radius: 1em;
+    flex-grow: 1;
+    padding: 2em;
+    overflow: hidden;
+}
+
+.login-formulario .campo {
+    align-items: center;
+    border-radius: 2.5em;
+    border:0.13em solid black;
+    display: flex;
+    margin-bottom: 1em;
+    padding: 1em;
+
+}
+
+a{
+    color: #0047B6;
+    display: inline;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+
+.boton-azul:hover, .boton-negro:hover, a:hover{
+    cursor: pointer;
+}
+
+.login-formulario form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.campo input{
+    justify-self: center;
+    border: none;
+    border-bottom: 2px solid rgb(187, 187, 187);
+    font-size: 1.2em;
+    font-weight: 300;
+    margin: 0 1em;
+    width: 100%;
+}
+
+.campo input[type=text]:focus, input[type=password]:focus{
+    outline: none;
+    border-bottom: 2px solid rgb(39, 38, 38);
+}
+
+.boton-azul{
+    align-self: center;
+    color:#ffff;
+    background-color: #0047B6;
+    border-radius: 1em;
+    border: none;
+    font-size: 1em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    width: 40%;
+}
+
+.boton-negro{
+    color: #fff;
+    background-color: #000;
+    align-self: center;
+    border-radius: 1em;
+    border: none;
+    font-size: 1em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    width: 40%;
+}
+
+
+.campo img {
+    object-fit: contain;
+    width: 2.2em;
+}
