@@ -16,17 +16,21 @@ function PsswChange(){
                     <ul>
                         <li>
                             <h2>Nueva contraseña</h2>
-                            <input type="password" name="cont" id="cont" size="35" maxlength="50"/>
+                            <input type="password" name="cont" id="cont" size="35" maxLength="50"/>
                         </li>
                         <li>
                             <h2>Confirmar nueva contraseña</h2>
-                            <input type="password" name="ccont" id="ccont" size="35" maxlength="50"/>
+                            <input type="password" name="ccont" id="ccont" size="35" maxLength="50"/>
                         </li>
                     </ul>
                     
                     <button class="button1">Confirmar</button>
                 </form>
             </main>
+
+            <footer>
+                © 2023 | Instituto Politécnico Nacional - Escuela Superior de Cómputo
+            </footer>
         </div>
         </>
 
