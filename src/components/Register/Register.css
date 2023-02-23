@@ -71,6 +71,7 @@
 }
 
 .registro input[type=text], .registro input[type=password] {
+    font-weight: 300;
     border-radius: 1.2rem;
     border: 0.0625rem solid black;
     height: 1.7rem;
@@ -83,7 +84,7 @@
     border-radius: 1.6rem;
     color: white;
     font-size: 0.95rem;
-    font-weight: 400;
+    font-weight: 200;
     height: 2.4rem;
     width: 10rem;
     margin-top: 0.5rem;
@@ -97,7 +98,7 @@
     border-radius: 1.6rem;
     color: white;
     font-size: 0.95rem;
-    font-weight: 400;
+    font-weight: 200;
     height: 2.4rem;
     width: 10rem;
     margin-top: 0.5rem;

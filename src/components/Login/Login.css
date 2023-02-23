@@ -1,19 +1,10 @@
-/*
-body > #root > div {
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(0, 0, 0);
-}
-*/
-
 .login-component {
-    width: 30%;
-    height: 60%;
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
-.login-component h2{
+.login-component h1 {
     color: #ffff;
     font-size: 2em;
     font-weight: 300;
@@ -24,11 +15,13 @@ body > #root > div {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-self: center;
     background-color: #ffff;
-    border-radius: 1em;
-    flex-grow: 1;
-    padding: 2em;
+    border-radius: 0.8rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
     overflow: hidden;
 }
 
@@ -39,10 +32,9 @@ body > #root > div {
     display: flex;
     margin-bottom: 1em;
     padding: 1em;
-
 }
 
-a{
+a {
     color: #0047B6;
     display: inline;
     font-size: 0.8em;
@@ -62,8 +54,7 @@ a{
 .campo input{
     justify-self: center;
     border: none;
-    border-bottom: 2px solid rgb(187, 187, 187);
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 300;
     margin: 0 1em;
     width: 100%;
@@ -71,35 +62,55 @@ a{
 
 .campo input[type=text]:focus, input[type=password]:focus{
     outline: none;
-    border-bottom: 2px solid rgb(39, 38, 38);
 }
 
-.boton-azul{
-    align-self: center;
-    color:#ffff;
-    background-color: #0047B6;
-    border-radius: 1em;
-    border: none;
-    font-size: 1em;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    width: 40%;
+.login-component hr {
+    border: 0.048rem solid black;
+    width: 22rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-.boton-negro{
-    color: #fff;
-    background-color: #000;
-    align-self: center;
-    border-radius: 1em;
+.boton-azul {
+    cursor: pointer;
+    color: white;
+    background-color: #0047b6;
     border: none;
-    font-size: 1em;
-    padding: 0.5em;
+    border-radius: 1.6rem;
+    font-size: 0.95rem;
+    font-weight: 200;
+    height: 2.4rem;
+    width: 10rem;
+    margin-top: 0.5rem;
+    align-self: center;
     margin-bottom: 1em;
-    width: 40%;
+}
+
+.boton-negro {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 1.6rem;
+    font-size: 0.95rem;
+    font-weight: 200;
+    height: 2.4rem;
+    width: 10rem;
+    margin-top: 0.5rem;
+    align-self: center;
 }
 
 
 .campo img {
     object-fit: contain;
     width: 2.2em;
+}
+
+.login-component footer {
+    color: white;
+    font-size: 0.75em;
+    font-weight: 200;
+    position: fixed;
+    bottom: 0.6em;
+    align-self: left;
 }
