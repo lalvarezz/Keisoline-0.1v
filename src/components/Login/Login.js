@@ -8,9 +8,11 @@ function Login(){
     return(
         <>
         <div className="login-component">
-            <header>
-                <h1>&lt;Keisoline&gt;</h1>
-            </header>
+            <div className="keisoline-txt">
+                <header>
+                    <h1>&lt;Keisoline&gt;</h1>
+                </header>
+            </div>
             
             <div className="login-formulario">
                 <form>
