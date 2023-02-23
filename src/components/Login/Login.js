@@ -1,10 +1,8 @@
 import './Login.css';
 import { Link } from "react-router-dom";
-import {COLORS} from '../colores.js'
+//import {COLORS} from '../colores.js'
 import usuario from '../icons/usuario.png';
 import lock from '../icons/lock.png';
-
-
 
 function Login(){
     return(
@@ -21,12 +19,12 @@ function Login(){
                         <img src={lock} alt="lock-icon"></img>
                         <input type="password" name="password"/>
                         </div>
-                        <input class="boton-azul" type="submit" value="Iniciar sesión"></input>
+                        <input className="boton-azul" type="submit" value="Iniciar sesión"></input>
                         <Link to="#">Recuperar contraseña</Link>
                     </form>
                     
                     <hr/>
-                    <button class="boton-negro">Registrarse</button>
+                    <button className="boton-negro">Registrarse</button>
                 </div>
             </div>
         </>

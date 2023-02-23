@@ -1,8 +1,10 @@
+/*
 body > #root > div {
-    box-sizing: border-box;
-    align-items:start;
-    background-color: #151515;
+    display: flex;
+    height: 100vh;
+    background-color: black;
 }
+*/
 
 .navBar{
     display: flex;
