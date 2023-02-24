@@ -1,57 +1,58 @@
+/*
 body > #root > div {
     box-sizing: border-box;
     align-items:start;
     background-color: #151515;
 }
+*/
 
-.navBar{
+.navBar-component {
     display: flex;
     justify-content: space-between;
-    background-color: #000;
+    background-color: black;
     padding: 0 1.2em;
-    width: 100%;
-    height: 10%;
+    height: 4rem;
 }
 
-.navBar .barraBusqueda{
+.navBar-component .barraBusqueda {
     overflow: hidden;
     display: flex;
     align-self: center;
     background-color: #464646;
     border-radius: 1.2em;
-    width: 45%;
-    height: 40%;
+    width: 40rem;
+    height: 2rem;
 }
 
-.navBar .barraBusqueda input{
+.navBar-component .barraBusqueda input {
     color:#fff;
     background-color: inherit;
-    width: 100%;
+    /*width: 100%;*/
     border: none;
 }
 
-.navBar .barraBusqueda input:focus{
+.navBar-component .barraBusqueda input:focus {
     outline: none;
     border: none;
 }
 
-.navBar .usuarioElems{
+.navBar-component .usuarioElems {
     display: flex;
 }
 
-.navBar img{
+.navBar-component img {
     object-fit: contain;
     width: 2em;
     margin-left: 1em;
 }
 
-.barraBusqueda img{
+.barraBusqueda img {
     width: 1em;
     object-fit: contain;
     margin-right: 1em;
 }
 
-.navBar h1{
+.navBar-component h1 {
     font-weight: 200;
     align-self: center;
     font-size: 1.2em;

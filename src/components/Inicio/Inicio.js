@@ -8,7 +8,7 @@ import logoutInicio from '../icons/logout-inicio.png';
 function Inicio(){
     return(
         <>
-            <div className='container'>
+            <div className='start-component'>
                 <div className='cabecera'>
                     <h3>Domingo 6 de noviembre, 2023</h3>
                     <h2>Bienvenida, Laura</h2>

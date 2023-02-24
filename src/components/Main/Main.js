@@ -7,11 +7,13 @@ import Inicio from '../Inicio/Inicio';
 function Main(){
     return(
         <>
-            <NavBar/>
-            <main className='contenedor'>
-                <MenuBar/>
-                <Inicio/>
-            </main>
+            <div className='inicioPrincipal'>
+                <NavBar/>
+                <main className='pgprincipal'>
+                    <MenuBar/>
+                    <Inicio/>
+                </main>
+            </div>
             
         </>
     );

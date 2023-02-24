@@ -8,7 +8,7 @@ function Register(){
                 <h1>&lt;Keisoline&gt;</h1>
             </header>
 
-            <main className="container">
+            <main className="container-form">
                 <h1>Registro</h1>
                 <form id="formulario">
                     <ul>

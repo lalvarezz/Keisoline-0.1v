@@ -8,7 +8,7 @@ function PsswChange(){
                 <h1>&lt;Keisoline&gt;</h1>
             </header>
 
-            <main className="container">
+            <main className="container-form">
                 <h1>Restablecer contraseña</h1>
                 <form id="formcamb">
                     <h2>Cuenta</h2>
