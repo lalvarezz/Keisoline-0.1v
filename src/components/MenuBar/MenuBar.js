@@ -16,13 +16,15 @@ function MenuBar(){
                 <div className='menuBar-inicio'>
                     <img src={menu} alt='home-icon'/>
                 </div>
+
                 <div className='menuBar-medio'>
                     <img src={home} alt='home-icon'/>
                     <img src={tarea} alt='tarea-icon'/>
                     <img src={sprint} alt='sprint-icon'/>
                     <img src={kanban} alt='kanban-icon'/>
                     <img src={grafico} alt='grafico-icon'/>
-                </div> 
+                </div>
+                
                 <div className='menuBar-fin'>
                     <img src={ayuda} alt='ayuda-icon'/>
                     <img src={logout} alt='logout-icon'/>

@@ -2,6 +2,7 @@
     color: white;
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 .registro h1 {
@@ -15,7 +16,7 @@
     margin-left: 1.2rem;
 }
 
-.container h1 {
+.container-form h1 {
     margin-bottom: 0.5rem;
 }
 
@@ -49,7 +50,7 @@
     margin-bottom: 1rem;
 }
 
-.registro .container {
+.registro .container-form {
     display: flex;
     flex-direction: column;
     align-self: center;

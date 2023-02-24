@@ -8,7 +8,7 @@ function PsswCRequest(){
                 <h1>&lt;Keisoline&gt;</h1>
             </header>
 
-            <main class="container">
+            <main class="container-form">
                 <h1>Restablecer contraseña</h1>
                 <form id="formrecup">
                     <ul>

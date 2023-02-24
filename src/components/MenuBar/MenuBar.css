@@ -1,36 +1,35 @@
-.menuBar-component{
+.menuBar-component {
     display: flex;
     flex-direction: column;
-    width: 5%;
+    width: 5rem;
     padding: 1.5em 0;
     background-color: #393939;
     justify-content: space-between;
 }
 
-.menuBar-component div{
+.menuBar-component div {
     display:flex;
     align-items: center;
     flex-direction: column;
 }
 
-.menuBar-medio{
+.menuBar-medio {
     display: flex;
     justify-content:space-between;
     height: 50%;
 }
 
-.menuBar-fin :nth-child(2){
+.menuBar-fin :nth-child(2) {
     margin-top: 2em;
     
 }
 
-.menuBar-component img{
+.menuBar-component img {
     transition: 0.3s;
     width: 1.5em;
 }
 
-.menuBar-component img:hover{
+.menuBar-component img:hover {
     cursor: pointer;
-    
     width: 2em;
 }
