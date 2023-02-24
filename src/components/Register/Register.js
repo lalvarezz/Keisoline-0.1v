@@ -1,6 +1,16 @@
+import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../../context/userContext';
 import './Register.css';
 
-function Register(){
+const Register = () =>{
+    //const {registerUser, isLoading} = useContext(UserContext);
+    /*const [message, setMessage] = useState(false);
+    const [formData, setFormData] = useState({
+
+    });*/
+
+
     return(
         <>
         <div className="registro">
