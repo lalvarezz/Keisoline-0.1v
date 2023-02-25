@@ -1,15 +1,53 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { UserContext } from '../../context/userContext';
 import './Register.css';
 
 const Register = () =>{
-    //const {registerUser, isLoading} = useContext(UserContext);
-    /*const [message, setMessage] = useState(false);
+    const {registerUser, isLoading} = useContext(UserContext);
+    const [formIsValid, setFormIsValid] = useState(false);
+    const [msg, setMsg] = useState('');
     const [formData, setFormData] = useState({
+        nombre:'',
+        appat:'',
+        apmat:'',
+        correinst:'',
+        cont:'',
+        ccont:''
+    });
+    
+    const handleChange =(event) =>{
+        setFormData({
+            ...formData,
+            [event.target.name]:event.target.value
+        });
+    }
 
-    });*/
+    const submitForm = async (e) => {
+        e.preventDefault();
+        
+        if(!Object.values(formData).every(val => val.trim() !== '')){
+            setMsg('Es necesario rellenar todos los campos.');
+            return;
+        }
 
+        const data = await registerUser(formData);
+        
+        if(data.success){
+            e.target.reset();
+            setFormIsValid(true);
+            setFormData({
+                nombre:'',
+                appat:'',
+                apmat:'',
+                correinst:'',
+                cont:'',
+                ccont:''
+            });
+            setMsg('El usuario se ha registrado correctamente.');
+        }else if(!data.success && data.message){
+            setMsg(data.message);
+        }
+    }
 
     return(
         <>
@@ -20,36 +58,38 @@ const Register = () =>{
 
             <main className="container-form">
                 <h1>Registro</h1>
-                <form id="formulario">
+                <form id="formulario" onSubmit={submitForm}>
                     <ul>
                         <li>
                             <h2>Nombre(s)</h2>
-                            <input type="text" name="nombre" id="nombre" size="35" maxLength="30"/>
+                            <input type="text" value={formData.nombre} onChange={handleChange} name="nombre" id="nombre" size="35" maxLength="30"/>
                         </li>
                         <li>
                             <h2>Apellido paterno</h2>
-                            <input type="text" name="appat" id="appat" size="35" maxLength="20"/>
+                            <input type="text" value={formData.appat} onChange={handleChange} name="appat" id="appat" size="35" maxLength="20"/>
                         </li>
                         <li>
                             <h2>Apellido materno</h2>
-                            <input type="text" name="apmat" id="apmat" size="35" maxLength="20"/>
+                            <input type="text" value={formData.apmat} onChange={handleChange} name="apmat" id="apmat" size="35" maxLength="20"/>
                         </li>
 
                         <div className="rlinea"> <hr/> </div>
 
                         <li>
                             <h2>Correo institucional</h2>
-                            <input type="text" name="correinst" id="correinst" size="35" maxLength="50"/>
+                            <input type="text" value={formData.correinst} onChange={handleChange} name="correinst" id="correinst" size="35" maxLength="50"/>
                         </li>
                         <li>
                             <h2>Contraseña</h2>
-                            <input type="password" name="cont" id="cont" size="35" maxLength="50"/>
+                            <input type="password" value={formData.cont} onChange={handleChange} name="cont" id="cont" size="35" maxLength="50"/>
                         </li>
                         <li>
                             <h2>Confirmar contraseña</h2>
-                            <input type="password" name="ccont" id="ccont" size="35" maxLength="50"/>
+                            <input type="password" value={formData.ccont} onChange={handleChange} name="ccont" id="ccont" size="35" maxLength="50"/>
                         </li>
                     </ul>
+                    {formIsValid && <div className="success-msg">{msg}</div>}
+                    {!formIsValid && <div className="error-msg">{msg}</div>}
                     
                     <button className="button1">Continuar</button>
                 </form>

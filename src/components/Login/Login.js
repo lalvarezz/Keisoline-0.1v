@@ -1,10 +1,46 @@
 import './Login.css';
 import { Link } from "react-router-dom";
-//import {COLORS} from '../colores.js'
 import usuario from '../icons/usuario.png';
 import lock from '../icons/lock.png';
+import { UserContext } from '../../context/userContext';
+import { useContext, useState } from 'react';
 
 function Login(){
+    const {loginUser, isLoading, loggedInCheck} = useContext(UserContext);
+    const [msg, setMsg] = useState('');
+    const [redirect, setRedirect] = useState(false);
+    const [formIsValid, setFormIsValid] = useState(false);
+    const [formData, setFormData] = useState({
+        correo:'',
+        password:''
+    });
+
+    const handleChange = (event) =>{
+        setFormData({
+            ...formData,
+            [event.target.name]:event.target.value
+        });
+    }
+
+    const submitForm = async (e) => {
+        e.preventDefault();
+
+        if(!Object.values(formData).every(val => val.trim() !== '')){
+            setMsg('Es necesario rellenar todos los campos.');
+            return;
+        }
+
+        const data = await loginUser(formData);
+        if(data.success){
+            setFormIsValid(true);
+            e.target.reset();
+            setRedirect('Redirigiendo...');
+            await loggedInCheck();
+            return;
+        }
+        setMsg(data.message);
+    }
+
     return(
         <>
         <div className="login-component">
@@ -15,16 +51,17 @@ function Login(){
             </div>
             
             <div className="login-formulario">
-                <form>
+                <form onSubmit={submitForm}>
                     <div className="campo">
                         <img src={usuario} alt="user-icon"></img>
-                        <input type="text" name="correo"/>
+                        <input type="text" value={formData.correo} onChange={handleChange} name="correo"/>
                     </div>
                     <div className="campo">
                         <img src={lock} alt="lock-icon"></img>
-                        <input type="password" name="password"/>
+                        <input type="password" value={formData.password} onChange={handleChange} name="password"/>
                     </div>
-                    <input className="boton-azul" type="submit" value="Iniciar sesión"></input>
+                    {!formIsValid  && <div className="err-msg">{msg}</div>}
+                    {redirect ? redirect :  <input className="boton-azul" disabled={isLoading} type="submit" value="Iniciar sesión"></input>}
                     <Link to="#">Recuperar contraseña</Link>
                 </form>
                 

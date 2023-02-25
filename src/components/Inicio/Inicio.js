@@ -3,15 +3,18 @@ import proyecto from '../icons/proyecto-inicio.png';
 import tareaInicio from '../icons/tarea-inicio.png';
 import configuracion from '../icons/configuracion.png';
 import logoutInicio from '../icons/logout-inicio.png';
-
+import { UserContext } from '../../context/userContext';
+import { useContext } from 'react';
 
 function Inicio(){
+    const {user, logout} = useContext(UserContext);
+
     return(
         <>
             <div className='start-component'>
                 <div className='cabecera'>
                     <h3>Domingo 6 de noviembre, 2023</h3>
-                    <h2>Bienvenida, Laura</h2>
+                    <h2>Bienvenida, {user.nombre}</h2>
                 </div>
                 <ul className='botones'>
                     <div id='fila-1'>
@@ -37,7 +40,7 @@ function Inicio(){
 
                         <li>
                             <span className='vl'/>
-                            <h1 className=''>Cerrar sesión</h1>
+                            <h1 onClick={logout} className='' >Cerrar sesión</h1>
                             <img src={logoutInicio} alt='logout'/>
                         </li>
                     </div>

@@ -8,8 +8,8 @@ export const Axios = axios.create({
 });
 
 export const UserContextProvider = ({children}) => {
-    const [theUser, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [theUser, setUser] = useState(null);
 
     const registerUser = async ({nombre, appat, apmat, correinst, cont, ccont}) => {
         setIsLoading(true);
@@ -22,16 +22,63 @@ export const UserContextProvider = ({children}) => {
                 cont,
                 ccont
             });
+            setIsLoading(false);
             return data;
         }catch(err){
+            setIsLoading(false);
             return {success:0, message:'Error en el servidor'};
         }
-        setIsLoading(false);
+    }
 
+    const loginUser = async ({correo, password}) => {
+        setIsLoading(true);
+
+        try{
+            const {data} = await Axios.post('login.php',{
+                correo,
+                password
+            });
+            if(data.success && data.userData){
+                localStorage.setItem('isLoggedIn', 1);
+                localStorage.setItem('userData', JSON.stringify(data.userData));
+                setIsLoading(false);
+                return {success:1};
+            }
+            setIsLoading(false);
+            return {success:0, message:data.message};
+
+        }catch(err){
+            setIsLoading(false);
+            return {success:0, message:'Error en el servidor'};
+        }
+    }
+
+    const loggedInCheck = async () =>{
+        const loginToken = localStorage.getItem('isLoggedIn');
+        Axios.defaults.headers.common['Authorization'] = 'Bearer '+loginToken;
+
+        if(loginToken){
+            setUser(JSON.parse(localStorage.getItem('userData')));
+            return;
+        }
+        setUser(null);
+    }
+
+    useEffect(() => {
+        async function asyncCall(){
+            await loggedInCheck();
+        }
+        asyncCall();
+    },[]);
+
+    const logout = () => {
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('userData');
+        setUser(null);
     }
 
     return(
-        <UserContext.Provider value={{registerUser, user:theUser, isLoading}}>
+        <UserContext.Provider value={{registerUser, isLoading, loginUser, logout, user:theUser, loggedInCheck}}>
             {children}
         </UserContext.Provider>
     );
