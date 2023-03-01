@@ -14,7 +14,7 @@ function Inicio(){
             <div className='start-component'>
                 <div className='cabecera'>
                     <h3>Domingo 6 de noviembre, 2023</h3>
-                    <h2>Bienvenida, {user.nombre}</h2>
+                    {/*<h2>Bienvenida, {user.nombre}</h2>*/}
                 </div>
                 <ul className='botones'>
                     <div id='fila-1'>

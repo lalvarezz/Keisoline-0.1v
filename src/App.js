@@ -16,15 +16,17 @@ function App() {
       <BrowserRouter>
           <Routes>
             <>
-            {user && <Route path="/" element={<Main/>} />}
+            {/*user && <Route path="/" element={<Main/>} />}
             {!user &&(
               <>
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register" element={<Register/>} />
               </>
-            )}
-            
-              <Route path="*" element={<Navigate to={user ? '/':'/login'} />} />
+            )*/}
+              <Route path="/" element={<Main/>} />
+              <Route path="/login" element={<Login/>} />
+              <Route path="/register" element={<Register/>}/>
+              {/*<Route path="*" element={<Navigate to={user ? '/':'/login'} />} />*/}
               <Route path="/psswcrequest" element={<PsswCRequest/>} />
               <Route path="/psswchange" element={<PsswChange/>} />
               

@@ -4,6 +4,7 @@ import usuario from '../icons/usuario.png';
 import lock from '../icons/lock.png';
 import { UserContext } from '../../context/userContext';
 import { useContext, useState } from 'react';
+import Button from '../../UI/Button/Button';
 
 function Login(){
     const {loginUser, isLoading, loggedInCheck} = useContext(UserContext);
@@ -41,6 +42,10 @@ function Login(){
         setMsg(data.message);
     }
 
+    const [setButtonValue] = useState('Click me!');
+    const handleClick = () => {
+        setButtonValue('Button clicked!'); };
+
     return(
         <>
         <div className="login-component">
@@ -61,13 +66,14 @@ function Login(){
                         <input type="password" value={formData.password} onChange={handleChange} name="password"/>
                     </div>
                     {!formIsValid  && <div className="err-msg">{msg}</div>}
-                    {redirect ? redirect :  <input className="boton-azul" disabled={isLoading} type="submit" value="Iniciar sesión"></input>}
+                    {redirect ? redirect :  <Button disabled={isLoading} type="submit" value="Iniciar sesión" color ="#0047b6"/>}
                     <Link to="#">Recuperar contraseña</Link>
                 </form>
                 
                 <div className="rlinea"> <hr/> </div>
 
-                <button className="boton-negro">Registrarse</button>
+                <Button onClick={handleClick} value="Registrarse" color ="black"/>
+                
             </div>
 
             <footer>

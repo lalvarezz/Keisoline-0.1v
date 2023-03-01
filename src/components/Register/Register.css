@@ -78,41 +78,13 @@
     padding-left: 0.6rem;
 }
 
-.registro .button1 {
-    cursor: pointer;
-    background-color: #0047b6;
-    border: none;
-    border-radius: 1.6rem;
-    color: white;
-    font-size: 0.95rem;
-    font-weight: 200;
-    height: 2.4rem;
-    width: 10rem;
-    margin-top: 0.5rem;
-    align-self: center;
-}
-
-.registro .button2 {
-    cursor: pointer;
-    background-color: black;
-    border: none;
-    border-radius: 1.6rem;
-    color: white;
-    font-size: 0.95rem;
-    font-weight: 200;
-    height: 2.4rem;
-    width: 10rem;
-    margin-top: 0.5rem;
-    align-self: center;
-}
-
 .registro .bregresar {
     cursor: pointer;
     background-color: transparent;
     align-self: self-start;
 }
 
-.registro .button1:active, .registro .button2:active, .bregresar:active {
+.bregresar:active {
     transform: translateY(0.1rem);
 }
 
