@@ -8,6 +8,8 @@ import Main from './components/Main/Main'
 import { useContext } from 'react';
 import { UserContext } from './context/userContext';
 
+import ProjectForm from './components/Project/ProjectForm'
+
 function App() {
   const {user} = useContext(UserContext);   
 
@@ -29,6 +31,8 @@ function App() {
               {/*<Route path="*" element={<Navigate to={user ? '/':'/login'} />} />*/}
               <Route path="/psswcrequest" element={<PsswCRequest/>} />
               <Route path="/psswchange" element={<PsswChange/>} />
+
+              <Route path="/projectform" element={<ProjectForm/>} />
               
             </>
           </Routes>

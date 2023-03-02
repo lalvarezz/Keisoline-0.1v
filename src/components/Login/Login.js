@@ -42,10 +42,6 @@ function Login(){
         setMsg(data.message);
     }
 
-    const [setButtonValue] = useState('Click me!');
-    const handleClick = () => {
-        setButtonValue('Button clicked!'); };
-
     return(
         <>
         <div className="login-component">
@@ -67,12 +63,14 @@ function Login(){
                     </div>
                     {!formIsValid  && <div className="err-msg">{msg}</div>}
                     {redirect ? redirect :  <Button disabled={isLoading} type="submit" value="Iniciar sesión" color ="#0047b6"/>}
-                    <Link to="#">Recuperar contraseña</Link>
+                    <Link to="/psswcrequest">Recuperar contraseña</Link>
                 </form>
                 
                 <div className="rlinea"> <hr/> </div>
 
-                <Button onClick={handleClick} value="Registrarse" color ="black"/>
+                <Link to="/register">
+                    <Button value="Registrarse" color ="black"/>
+                </Link>
                 
             </div>
 

@@ -1,4 +1,6 @@
 import './Register.css';
+import Button from '../../UI/Button/Button';
+import { Link } from "react-router-dom";
 
 function PsswCRequest(){
     return(
@@ -17,16 +19,17 @@ function PsswCRequest(){
                             <input type="text" name="correinst" id="correinst" size="35" maxLength="50"/>
                         </li>
                     </ul>
-                    
-                    <button className="button2">Recuperar</button>
+                    <Button value="Recuperar" color ="black"/>
                 </form>
 
-                <button className="bregresar">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-back" width="52" height="52" viewBox="0 0 24 24" strokeWidth="2" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 11l-4 4l4 4m-4 -4h11a4 4 0 0 0 0 -8h-1" />
-                    </svg>
-                </button>
+                <Link to="/login">
+                    <button className="bregresar">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-back" width="52" height="52" viewBox="0 0 24 24" strokeWidth="2" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9 11l-4 4l4 4m-4 -4h11a4 4 0 0 0 0 -8h-1" />
+                        </svg>
+                    </button>
+                </Link>
             </main>
 
             <footer>

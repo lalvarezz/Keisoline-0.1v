@@ -1,0 +1,65 @@
+.projectform-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+.container-projectform {
+    background-color: white;
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding-top: 2rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.container-projectform h1 {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.container-projectform h2 {
+    color: #0047b6;
+	font-size: 1rem;
+	font-weight: 400;
+    margin-right: 1rem;
+}
+
+.container-projectform hr {
+    border: 0.03rem solid black;
+    width: 28rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#projectform {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-projectform input[type=text], .container-projectform input[type=date] {
+    font-weight: 300;
+    border-radius: 1.2rem;
+    background-color: #EDEDED;
+    border: none;
+    height: 1.7rem;
+    padding-left: 0.6rem;
+}
+
+.container-projectform ul {
+    align-self: center;
+}
+
+.container-projectform li {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+.projectf-buttons {
+    display: flex;
+    align-self: center;
+}

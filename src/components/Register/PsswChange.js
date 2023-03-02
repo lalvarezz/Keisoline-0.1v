@@ -1,4 +1,5 @@
 import './Register.css';
+import Button from '../../UI/Button/Button';
 
 function PsswChange(){
     return(
@@ -24,7 +25,7 @@ function PsswChange(){
                         </li>
                     </ul>
                     
-                    <button class="button1">Confirmar</button>
+                    <Button value="Confirmar" color ="#0047b6"/>
                 </form>
             </main>
 

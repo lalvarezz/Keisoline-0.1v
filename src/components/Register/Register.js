@@ -1,6 +1,8 @@
 import { useContext, useState } from 'react';
 import { UserContext } from '../../context/userContext';
 import './Register.css';
+import Button from '../../UI/Button/Button';
+import { Link } from "react-router-dom";
 
 const Register = () =>{
     const {registerUser, isLoading} = useContext(UserContext);
@@ -91,15 +93,17 @@ const Register = () =>{
                     {formIsValid && <div className="success-msg">{msg}</div>}
                     {!formIsValid && <div className="error-msg">{msg}</div>}
                     
-                    <button className="button1">Continuar</button>
+                    <Button value="Continuar" color ="#0047b6"/>
                 </form>
 
-                <button className="bregresar">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-back" width="52" height="52" viewBox="0 0 24 24" strokeWidth="2" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 11l-4 4l4 4m-4 -4h11a4 4 0 0 0 0 -8h-1" />
-                    </svg>
-                </button>
+                <Link to="/login">
+                    <button className="bregresar">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-back" width="52" height="52" viewBox="0 0 24 24" strokeWidth="2" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9 11l-4 4l4 4m-4 -4h11a4 4 0 0 0 0 -8h-1" />
+                        </svg>
+                    </button>
+                </Link>
             </main>                
 
             <footer>

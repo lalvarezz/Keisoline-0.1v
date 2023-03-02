@@ -46,6 +46,10 @@
     text-decoration: none;
 }
 
+form a {
+    margin-top: 0.8rem;
+}
+
 .boton-azul:hover, .boton-negro:hover, a:hover{
     cursor: pointer;
 }
@@ -70,7 +74,7 @@
 }
 
 .login-component hr {
-    border: 0.05rem solid black;
+    border: 0.04rem solid black;
     width: 17rem;
     margin-top: 1rem;
     margin-bottom: 1rem;

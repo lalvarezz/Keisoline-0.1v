@@ -7,11 +7,9 @@ function Button({onClick, value, color}) {
 
     return (
         <>
-            <div className="button-component">
-                <button className="boton" onClick={onClick} style={bStyle}>
-                    {value}
-                </button>
-            </div>
+            <button className="boton" onClick={onClick} style={bStyle}>
+                {value}
+            </button>
         </>
     );
 }
