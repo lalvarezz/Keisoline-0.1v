@@ -1,4 +1,4 @@
-.projectform-component {
+.taskform-component {
     background-color: rgba(0, 0, 0, 0.434);
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
     z-index: 999;
 }
 
-.container-projectform {
+.container-taskform {
     background-color: white;
     border-radius: 0.8rem;
     display: flex;
@@ -23,31 +23,31 @@
     padding-bottom: 2rem;
 }
 
-.container-projectform h1 {
+#taskform {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-taskform h1 {
 	font-size: 1.3rem;
 	font-weight: 500;
 }
 
-.container-projectform h2 {
+.container-taskform h2 {
     color: #0047b6;
 	font-size: 0.9rem;
 	font-weight: 400;
     margin-right: 0.6rem;
 }
 
-.container-projectform hr {
+.container-taskform hr {
     border: 0.04rem solid rgb(200, 200, 200);
     width: 25rem;
     margin-top: 0.3rem;
     margin-bottom: 1rem;
 }
 
-#projectform {
-    display: flex;
-    flex-direction: column;
-}
-
-.container-projectform input {
+.container-taskform input {
     font-weight: 300;
     border-radius: 1.2rem;
     background-color: #EDEDED;
@@ -57,29 +57,43 @@
     flex: 1;
 }
 
-.container-projectform select {
+.container-taskform textarea {
+    font-weight: 300;
+    border-radius: 1.2rem;
+    background-color: #EDEDED;
+    border: none;
+    padding: 0.6rem;
+    flex: 1;
+}
+
+.container-taskform select {
     font-weight: 300;
     border-radius: 1.2rem;
     background-color: #EDEDED;
     border: none;
     height: 1.7rem;
-    width: 3rem;
     padding-left: 0.8rem;
+    flex: 1;
 }
 
-.container-projectform ul {
+.container-taskform #prioridad, .container-taskform #historia  {
+    margin-right: 2rem;
+}
+
+.container-taskform ul {
+    list-style: none;
     align-self: center;
     width: 90%;
+    margin-bottom: 0.6rem;
 }
 
-.container-projectform li {
+.container-taskform li {
     display: flex;
     align-items: center;
-    flex-direction: row;
     margin-bottom: 0.8rem;
 }
 
-.projectf-buttons {
+.taskf-buttons {
     display: flex;
     align-self: center;
     justify-content: space-around;

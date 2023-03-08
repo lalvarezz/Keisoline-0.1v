@@ -5,28 +5,34 @@ import configuracion from '../icons/configuracion.png';
 import logoutInicio from '../icons/logout-inicio.png';
 import { UserContext } from '../../context/userContext';
 import { useContext } from 'react';
+import { useState } from 'react';
+
+import ProjectForm from '../Project/ProjectForm';
+import TaskForm from '../Task/TaskForm';
 
 function Inicio(){
     const {user, logout} = useContext(UserContext);
-
+    const [showProjectForm, setShowPF] = useState(false);
+    const [showTaskForm, setShowTF] = useState(false);
     return(
         <>
-            <div className='start-component'>
-                <div className='cabecera'>
+            <div className="start-component">
+                <div className="startup-header">
                     <h3>Domingo 6 de noviembre, 2023</h3>
                     {/*<h2>Bienvenida, {user.nombre}</h2>*/}
                 </div>
-                <ul className='botones'>
+                
+                <ul className="startup-buttons">
                     <div id='fila-1'>
-                        <li>
+                        <li onClick={() => setShowPF(true)}>
                             <span className='vl'/>
-                            <h1 className=''>Nuevo proyecto</h1>
-                            <img src={proyecto} alt='proyecto'/>
+                            <h1 className=''>Nuevo<br/>proyecto</h1>
+                            <img src={proyecto} alt='proyecto'/>                            
                         </li>
 
-                        <li>
+                        <li onClick={() => setShowTF(true)}>
                             <span className='vl'/>
-                            <h1 className=''>Nueva tarea</h1>
+                            <h1 className=''>Nueva<br/>tarea</h1>
                             <img src={tareaInicio} alt='tarea'/>
                         </li>
                     </div>
@@ -45,7 +51,11 @@ function Inicio(){
                         </li>
                     </div>
                 </ul>
+                
+                <ProjectForm trigger ={showProjectForm} setTrigger={setShowPF}/>
+                <TaskForm trigger ={showTaskForm} setTrigger={setShowTF}/>
             </div>
+            
         </>
     );
 }

@@ -1,0 +1,67 @@
+.configbar-component {
+    color: white;
+    background-color: #111111;
+    width: 18rem;
+}
+
+.container-config {
+    background-color: #393939;
+    padding: 0.8rem;
+    height: 100vh;
+}
+
+.container-config hr {
+    border: 0.04rem solid white;
+    width: 18rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.7rem;
+}
+
+.configbar-component header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.2rem 1.5rem 1.2rem 0.3rem;
+}
+
+.configbar-component h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-left: 0.7rem;
+}
+
+.configbar-component h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.configbar-component h3 {
+    font-size: 1.03rem;
+    font-weight: 200;
+    margin-left: 0.4rem;
+}
+
+.configbar-component header svg{
+    cursor: pointer;
+}
+
+.container-config ul {
+    list-style: none;
+}
+
+.container-config ul li {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.6rem;
+}
+
+.container-config li.selected {
+    background-color: #0047b6;
+    border-radius: 0.3rem;
+}
+
+.container-config li.selected h3{
+    font-weight: 500;
+}
